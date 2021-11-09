@@ -1,16 +1,21 @@
+import { useRouter } from "next/dist/client/router";
 import { useCart } from "../../store/cart/hook";
 import { CartIconButton, QuantityCircle, QuantityNumber, StyledCartIconSvg } from "./styles";
 
 export function CartIcon() {
-  const { getInCartQuantity } = useCart()
+  const { quantity } = useCart()
+  const router = useRouter()
 
+  function goToCart() {
+    router.push('/cart')
+  }
   
   return (
-    <CartIconButton>
+    <CartIconButton onClick={goToCart}>
       <StyledCartIconSvg />
-      { getInCartQuantity() > 0 ? 
+      { quantity > 0 ? 
         <QuantityCircle>
-          <QuantityNumber>1</QuantityNumber>
+          <QuantityNumber>{quantity}</QuantityNumber>
         </QuantityCircle> 
       : ''}
     </CartIconButton>

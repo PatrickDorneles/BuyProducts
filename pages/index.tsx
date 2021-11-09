@@ -7,17 +7,15 @@ import { useTitle } from '../src/store/title/hook'
 
 const Home: NextPage = () => {
   const { changeTitle } = useTitle()
-  const { loadProducts } = useProducts()
-  changeTitle('Produtos')
 
   useEffect(() => {
-    loadProducts()
+    changeTitle('Produtos')
   }, [])
-
+  
   return (
     <main>
-      <Navbar />
-      <ProductsList />
+      <Navbar cart />
+      <ProductsList  />
     </main>
   )
 }
