@@ -33,7 +33,7 @@ export const ProductImage = styled.img`
 `
 
 export const ProductTitle = styled.span`
-  display: inline-block;
+  display: block;
 
   font-weight: 600;
   font-size: 16px;
@@ -42,7 +42,7 @@ export const ProductTitle = styled.span`
 `
 
 export const ProductInfo = styled.span`
-  display: inline-flex;
+  display: flex;
   align-items: center;
   margin: 4px 0;
   font-size: 14px;
