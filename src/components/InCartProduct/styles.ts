@@ -44,7 +44,7 @@ export const ProductTitle = styled.span`
 export const ProductInfo = styled.span`
   display: flex;
   align-items: center;
-  margin: 4px 0;
+  margin: 2px 0;
   font-size: 14px;
 `
 

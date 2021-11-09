@@ -3,7 +3,7 @@ import { InCartProductComponent } from "../../src/components/InCartProduct"
 import { Navbar } from "../../src/components/Navbar"
 import { useCart } from "../../src/store/cart/hook"
 import { useTitle } from "../../src/store/title/hook"
-import { ButtonArea, CartPageContainer, ClearCartButton, FinalizeButton, InCartProductListContainer } from "./styles"
+import { ButtonArea, CartPageContainer, ClearCartButton, FinalizeButton, InCartProductListContainer } from "../../src/styles/pages/cart/styles"
 
 function CartPage() {
   const { changeTitle } = useTitle()

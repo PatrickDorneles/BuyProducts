@@ -5,7 +5,7 @@ import { useCart } from "../../src/store/cart/hook";
 import { useProducts } from "../../src/store/products/hook";
 import { useTitle } from "../../src/store/title/hook";
 import { Product } from "../../src/types/product";
-import { AddToCartButton, ButtonArea, BuyButton, DescriptionLabelContainer, LineDescription, ProductContainer, ProductDescription, ProductDescriptionLabel, ProductImage, ProductPageContainer, ProductPrice, ProductTitle } from "./styles";
+import { AddToCartButton, ButtonArea, BuyButton, DescriptionLabelContainer, LineDescription, ProductContainer, ProductDescription, ProductDescriptionLabel, ProductImage, ProductPageContainer, ProductPrice, ProductTitle } from "../../src/styles/pages/product/styles";
 
 function ProductPage() {
   const router = useRouter()

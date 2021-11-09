@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { color } from "../../src/styles/colors";
+import { color } from "../../colors";
 
 export const CartPageContainer = styled.div``
 

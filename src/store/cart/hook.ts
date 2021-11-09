@@ -9,6 +9,7 @@ export function useCart() {
   const cart = useSelector((store: RootState) => store.cart)
   const dispatch = useDispatch()
   const [quantity, setQuantity] = useState(0)
+  const [totalPrice, setTotalPrice] = useState(0)
 
   function addProductToCart(product: Product) {
     dispatch(AddProductToCartAction(product))
@@ -36,11 +37,22 @@ export function useCart() {
 
       return quantity
     })
+
+    setTotalPrice(() => {
+      let price = 0
+
+      cart.forEach((product) => {
+        price += product.price
+      })
+
+      return price
+    })
   }, [cart])
 
   return {
     cart,
     quantity,
+    totalPrice,
     addProductToCart,
     clearCart,
     changeItemQuantity,
