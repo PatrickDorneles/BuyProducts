@@ -32,8 +32,8 @@ export function InCartProductComponent({ product }: Props) {
       </ImageArea>
       <InfoContainer>
         <ProductTitle>{product.title}</ProductTitle>
-        <ProductInfo>Categoria: <strong>{product.category}</strong></ProductInfo>
-        <ProductInfo>Quantidade: <strong>{product.quantity}</strong> {MinusQuantityButton} {PlusQuantityButton} </ProductInfo>
+        <ProductInfo>Categoria:&nbsp;&nbsp; <strong>{product.category}</strong> </ProductInfo>
+        <ProductInfo>Quantidade:&nbsp;&nbsp; <strong>{product.quantity}</strong> &nbsp;&nbsp; {MinusQuantityButton} {PlusQuantityButton} </ProductInfo>
         <ProductPrice>R$ {product.price}</ProductPrice>
       </InfoContainer>
       <ButtonArea>

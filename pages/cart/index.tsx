@@ -1,18 +1,24 @@
+import { useRouter } from "next/dist/client/router"
 import { useEffect } from "react"
 import { InCartProductComponent } from "../../src/components/InCartProduct"
 import { Navbar } from "../../src/components/Navbar"
 import { useCart } from "../../src/store/cart/hook"
 import { useTitle } from "../../src/store/title/hook"
-import { ButtonArea, CartPageContainer, ClearCartButton, FinalizeButton, InCartProductListContainer } from "../../src/styles/pages/cart/styles"
+import { AddMoreProductsButton, ButtonArea, CartPageContainer, ClearCartButton, FinalizeButton, InCartProductListContainer, TotalPrice } from "../../src/styles/pages/cart/styles"
 
 function CartPage() {
+  const router = useRouter()
   const { changeTitle } = useTitle()
-  const { cart, clearCart } = useCart()
+  const { cart, clearCart, totalPrice } = useCart()
 
   useEffect(() => {
-    changeTitle('Carrinho de Compras')
+    changeTitle('Carrinho')
   }, [])
-  
+
+
+  function goToProducts() {
+    router.push('/')
+  }  
 
   function mapProductsToComponent() {
     return cart.map((inCartProduct) => {
@@ -25,7 +31,9 @@ function CartPage() {
       <Navbar back />
       <InCartProductListContainer>
         {mapProductsToComponent()}
+        <AddMoreProductsButton onClick={goToProducts} > ADICIONAR PRODUTO </AddMoreProductsButton>
       </InCartProductListContainer>
+      <TotalPrice> Preço Total: <strong> R$ {totalPrice} </strong> </TotalPrice>
       <ButtonArea>
         <FinalizeButton> FINALIZAR </FinalizeButton>
         <ClearCartButton onClick={clearCart}> LIMPAR CARRINHO </ClearCartButton>
