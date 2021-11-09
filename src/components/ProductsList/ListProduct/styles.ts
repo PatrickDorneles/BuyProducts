@@ -25,14 +25,16 @@ export const ProductImage = styled.img`
 `
 
 export const ProductTitle = styled.span`
-display: inline-block;
+display: block;
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 
-  font-weight: 600;
-  font-size: 24px;
+  font-weight: 400;
+  font-size: 16px;
+
+  margin: 4px 0 12px;
 `
 
 export const ProductPrice = styled.span`

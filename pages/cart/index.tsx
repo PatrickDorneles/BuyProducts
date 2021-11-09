@@ -26,6 +26,17 @@ function CartPage() {
     })
   }
 
+  function buyCart() {
+    const productsToBuy = cart
+
+    /**
+     * Do something to buy products
+     */
+
+    clearCart()
+    router.push('/')
+  }
+
   return (
     <CartPageContainer>
       <Navbar back />
@@ -35,7 +46,7 @@ function CartPage() {
       </InCartProductListContainer>
       <TotalPrice> Preço Total: <strong> R$ {totalPrice} </strong> </TotalPrice>
       <ButtonArea>
-        <FinalizeButton> FINALIZAR </FinalizeButton>
+        <FinalizeButton onClick={buyCart} > FINALIZAR </FinalizeButton>
         <ClearCartButton onClick={clearCart}> LIMPAR CARRINHO </ClearCartButton>
       </ButtonArea>
     </CartPageContainer>

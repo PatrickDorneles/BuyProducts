@@ -22,18 +22,21 @@ export const CartReducer = createReducer<InCartProduct[]>([], (builder) => {
 
   builder.addCase(ChangeItemQuantityAction, (state, action) => {
     const inCartProduct = state.find((product) => product.id === action.payload.id)
-
+    
     if(inCartProduct) {
-      const stateWithoutProduct = state.filter((product) => product.id !== inCartProduct.id)
-
+      const index = state.findIndex((product) => product.id === action.payload.id)
+      
       if(inCartProduct.quantity + action.payload.change <= 0) {
-        return stateWithoutProduct
+        return state.filter((product) => product.id !== inCartProduct.id)
       }
 
-      return [
-        { ...inCartProduct, quantity: inCartProduct.quantity + action.payload.change },
-        ...stateWithoutProduct
-      ]
+      const newState = [...state]
+
+      newState[index] = {
+        ...inCartProduct, quantity: inCartProduct.quantity + action.payload.change 
+      }
+
+      return newState
     }
 
     return state

@@ -42,7 +42,7 @@ export function useCart() {
       let price = 0
 
       cart.forEach((product) => {
-        price += product.price
+        price += product.price * product.quantity
       })
 
       return price
